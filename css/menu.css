@@ -1,0 +1,70 @@
+html,body {
+    height:100%;
+    /*padding-top:60px;*/
+    background-image: url('https://image.freepik.com/vector-gratis/inscripcion-centrada-herramientas-peluqueria_82574-5875.jpg');
+    background-size: cover;
+    
+  }
+
+
+section {
+  height:calc(90% - 50px);
+}
+.cnt-rarti{
+  position: fixed;
+  left: 800px;
+}
+
+.cnt-rarti input{
+  width: 300px;
+}
+
+.input-sm{
+  width: 300px;
+}
+.artibg{
+     backdrop-filter: blur(10px);
+        background: rgba(197, 197, 197, 0.5);
+        height: 100%;
+       
+        padding-top: 150px;
+}
+
+.artibg2{
+  background: white;
+  margin-top: 20px;
+}
+
+.cnt-scroll{
+ height: 500px;
+  overflow: auto;
+}
+
+/*Scroll*/
+
+.cnt-scroll::-webkit-scrollbar{
+    width: 7px;
+}
+.cnt-scroll::-webkit-scrollbar-thumb{
+      background: rgb(104, 104, 104);
+      border-radius: 5px;
+}
+
+
+.affix {
+  padding:0px;
+  -webkit-transition:padding 0.2s linear;
+  -moz-transition:padding 0.2s linear;  
+  -o-transition:padding 0.2s linear;         
+  transition:padding 0.2s linear;  
+
+}
+
+.affix-top {
+  padding-top:10px;
+  padding-bottom:10px;
+  -webkit-transition:padding 0.5s linear;
+  -moz-transition:padding 0.5s linear;  
+  -o-transition:padding 0.5s linear;         
+  transition:padding 0.5s linear;  
+}
