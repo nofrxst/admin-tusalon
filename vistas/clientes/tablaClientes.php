@@ -26,7 +26,7 @@
 	 		<td>Direccion</td>
 	 		<td>Email</td>
 	 		<td>Telefono</td>
-	 		<td>RFC</td>
+	 		<td>DNI / RUC</td>
 	 		<td>Editar</td>
 	 		<td>Eliminar</td>
 	 	</tr>

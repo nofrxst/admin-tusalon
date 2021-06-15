@@ -145,5 +145,23 @@ https://bootsnipp.com/snippets/Kr5yV
 
 		return $total;
 	}
+	public function obtenerproducto($idventa){
+		$c= new conectar();
+		$conexion=$c->conexion();
+
+		$sql="SELECT art.nombre 
+				from ventas inner join articulos as art 
+				where id_venta='$idventa'";
+		$result=mysqli_query($conexion,$sql);
+
+		$total=0;
+
+		while($ver=mysqli_fetch_row($result)){
+			$total=$total + $ver[0];
+		}
+
+		return $total;
+	}
+
 
  ?>

@@ -35,26 +35,28 @@ $result=mysqli_query($conexion,$sql);
  <head>
  	<title>Reporte de venta</title>
  	<link rel="stylesheet" type="text/css" href="../../librerias/bootstrap/css/bootstrap.css">
- </head>
+	<link rel="stylesheet" type="text/css" href="../../css/repo.css">
+</head>
  <body>
- 		<img src="../../img/ventas.jpg" width="200" height="200">
- 		<br>
- 		<table class="table">
+ 		
+		 <img src="../../img/ventas.jpg" width="200" height="200">
+
+ 		
+		<div class="cnt-repo" >
+ 		<table class="table" >
  			<tr>
  				<td>Fecha: <?php echo $fecha; ?></td>
  			</tr>
+ 			
  			<tr>
- 				<td>Folio: <?php echo $folio ?></td>
- 			</tr>
- 			<tr>
- 				<td>cliente: <?php echo $objv->nombreCliente($idcliente); ?></td>
+ 				<td>Cliente: <?php echo $objv->nombreCliente($idcliente); ?></td>
  			</tr>
  		</table>
 
-	<div class="artibg2">
- 		<table class="table">
+	
+ 		<table class="table" >
  			<tr>
- 				<td>nombre producto</td>
+ 				<td>Nombre producto</td>
  				<td>Precio</td>
  				<td>Cantidad</td>
  				<td>Descripcion</td>
@@ -90,7 +92,9 @@ $result=mysqli_query($conexion,$sql);
  			 <tr>
  			 	<td>Total=  <?php echo "$".$total; ?></td>
  			 </tr>
+			
  		</table>
 		 </div>
+		
  </body>
  </html>

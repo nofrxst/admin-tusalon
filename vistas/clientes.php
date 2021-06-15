@@ -28,7 +28,7 @@ if(isset($_SESSION['usuario'])){
 						<input type="text" class="form-control input-sm" id="email" name="email">
 						<label>Telefono</label>
 						<input type="text" class="form-control input-sm" id="telefono" name="telefono">
-						<label>RFC</label>
+						<label>DNI / RUC</label>
 						<input type="text" class="form-control input-sm" id="rfc" name="rfc">
 						<p></p>
 						<span class="btn btn-primary" id="btnAgregarCliente">Agregar</span>

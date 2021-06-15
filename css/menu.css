@@ -15,12 +15,12 @@ section {
   left: 800px;
 }
 
-.cnt-rarti input{
+.cnt-rarti input,.cnt-rarti select{
   width: 300px;
 }
 
 .input-sm{
-  width: 300px;
+  width: 100%;
 }
 .artibg{
      backdrop-filter: blur(10px);

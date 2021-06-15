@@ -10,8 +10,9 @@
 
 	$sql="SELECT id_venta,
 				fechaCompra,
-				id_cliente 
-			from ventas group by id_venta";
+				id_cliente,
+				art.nombre
+			from ventas  inner join articulos as art  group by id_venta";
 	$result=mysqli_query($conexion,$sql); 
 	?>
 
@@ -22,14 +23,15 @@
 		<div class="table-responsive">
 			<div class="artibg2">
 			<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-				<caption><label>Ventas :)</label></caption>
+				<caption><label>Ventas</label></caption>
 				<tr>
 					<td>Folio</td>
 					<td>Fecha</td>
 					<td>Cliente</td>
+					<td> Productos</td>
 					<td>Total de compra</td>
-					<td>Ticket</td>
-					<td>Reporte</td>
+					
+					
 				</tr>
 		<?php while($ver=mysqli_fetch_row($result)): ?>
 				<tr>
@@ -44,21 +46,16 @@
 							}
 						 ?>
 					</td>
+					
+					<td>
+						<?php echo .$obj->obtenDatosArticulo($ver[3]) ?>
+					</td>
 					<td>
 						<?php 
-							echo "$".$obj->obtenerTotal($ver[0]);
+							echo "S/.".$obj->obtenerTotal($ver[0]);
 						 ?>
 					</td>
-					<td>
-						<a href="../procesos/ventas/crearTicketPdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-danger btn-sm">
-							Ticket <span class="glyphicon glyphicon-list-alt"></span>
-						</a>
-					</td>
-					<td>
-						<a href="../procesos/ventas/crearReportePdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-danger btn-sm">
-							Reporte <span class="glyphicon glyphicon-file"></span>
-						</a>	
-					</td>
+					
 				</tr>
 		<?php endwhile; ?>
 			</table>
