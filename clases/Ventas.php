@@ -111,7 +111,28 @@ class ventas{
 
 		return $total;
 	}
+
+
+public function obtenerProducto($idventa){
+	$c= new conectar();
+	$conexion=$c->conexion();
+
+	$sql="SELECT id_venta,
+	fechaCompra,
+	id_cliente,
+	nombre
+	from ventas 
+			inner join articulos on ventas.id_producto=articulos.id_producto
+			Where id_venta = '$idventa'";
+	$result=mysqli_query($conexion,$sql);
+
+	$texto="";
+
+	while($ver=mysqli_fetch_row($result)){
+		$texto=$texto." ".$ver[3];
+	}
+
+	return $texto;
 }
-
-
+}
 ?>

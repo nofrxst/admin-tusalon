@@ -11,8 +11,8 @@
 	$sql="SELECT id_venta,
 				fechaCompra,
 				id_cliente,
-				art.nombre
-			from ventas  inner join articulos as art  group by id_venta";
+				nombre
+	from ventas  inner join articulos on ventas.id_producto=articulos.id_producto  group by id_venta";
 	$result=mysqli_query($conexion,$sql); 
 	?>
 
@@ -22,8 +22,8 @@
 	<div class="col-sm-10">
 		<div class="table-responsive">
 			<div class="artibg2">
-			<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-				<caption><label>Ventas</label></caption>
+			<table class="table table-striped table-hover table-condensed table-bordered" style="text-align: center;">
+				<caption><label style="padding-left: 45%; ;text-transform:uppercase;font-size:20px;">Ventas</label></caption>
 				<tr>
 					<td>Folio</td>
 					<td>Fecha</td>
@@ -48,7 +48,9 @@
 					</td>
 					
 					<td>
-						<?php echo $ver[3] ?>
+					<?php 
+                        echo $obj->obtenerProducto($ver[0]); 
+                        ?>
 					</td>
 					<td>
 						<?php 

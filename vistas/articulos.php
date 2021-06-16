@@ -20,12 +20,12 @@ if(isset($_SESSION['usuario'])){
 	</head>
 	<body>
 		<div class="artibg">
-		<div class="container">
+		<div class="container arti">
 			<div class="cnt-rarti">
 			<h1>Articulos</h1>
 			<div class="row">
 				<div class="col-sm-4">
-					<form id="frmArticulos" enctype="multipart/form-data">
+					<form id="frmArticulos" class="frm" enctype="multipart/form-data">
 						<label>Categoria</label>
 						<select class="form-control input-sm" id="categoriaSelect" name="categoriaSelect">
 							<option value="A">Selecciona Categoria</option>
@@ -44,7 +44,7 @@ if(isset($_SESSION['usuario'])){
 						<label>Imagen</label>
 						<input type="file" id="imagen" name="imagen">
 						<p></p>
-						<span id="btnAgregaArticulo" class="btn btn-primary">Agregar</span>
+						<span id="btnAgregaArticulo" class="btn btn-primary ">Agregar</span>
 					</form>
 				</div>
 				

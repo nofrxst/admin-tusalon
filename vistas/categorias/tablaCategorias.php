@@ -11,7 +11,7 @@
 	 ?>
 
 <div class="artibg2">
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+<table class="table table-striped table-hover table-condensed table-bordered" style="text-align: center;">
 	
 	
 	<tr>

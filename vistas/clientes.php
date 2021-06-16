@@ -14,6 +14,7 @@ if(isset($_SESSION['usuario'])){
 	<body>
 		<div class="artibg">
 		<div class="container">
+		
 			<h1>Clientes</h1>
 			<div class="row">
 				<div class="col-sm-4">

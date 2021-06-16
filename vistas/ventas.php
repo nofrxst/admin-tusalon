@@ -12,10 +12,11 @@
 	<?php require_once "menu.php"; ?>
 </head>
 <body>
-		<div class="artibg">	<div class="container">
-		 <h1>Venta de productos</h1>
+		<div class="artibg">	
+		<div class="container">
+		 <h1 style="text-align:center;">Venta de productos</h1>
 		 <div class="row">
-		 	<div class="col-sm-12">
+		 	<div class="col-sm-12" style="padding-left: 40%;">
 		 		<span class="btn btn-default" id="ventaProductosBtn">Vender producto</span>
 		 		<span class="btn btn-default" id="ventasHechasBtn">Ventas hechas</span>
 		 	</div>
