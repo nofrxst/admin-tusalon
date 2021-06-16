@@ -13,81 +13,30 @@ if(isset($_SESSION['usuario'])){
 		<?php require_once "../clases/Conexion.php"; 
 		$c= new conectar();
 		$conexion=$c->conexion();
+		if(isset($_POST['search'])){
+			$searchKey = $_POST['search'];
+			$sql = "SELECT * FROM articulos where nombre LIKE '%$searchKey%'";
+		}else
+		$sql = "SELECT * FROM articulos";
 		
-	
-		$where ="";
-
-if(!empty($_POST))
-{
-    $valor = $_POST['campo'];
-    if(!empty($valor)){
-        $where = "WHERE nombre LIKE  '%$valor'";
-    }
-}
-$sql = "SELECT * FROM articulos  $where";
-$resultado = $mysqli->query($sql);
-
-?>
+		$result=mysqli_query($conexion,$sql);
 		?>
 	</head>
 	<body>
 		<div class="artibg">
 		<div class="container">
-			<h1 style="text-align:center;text-transform:uppercase;">Inventario</h1>
+			<h1>Inventario</h1>
 			<div class="row">
 				
-			<form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
-            <b>Nombre: </b><input type="text" id="campo" name="campo">  <input  style="Margin-left:20px;" type="submit" id="enviar" value="Buscar" class="btn btn-info" >
-            </form>
+				
+					<form action="buscar_producto.php" method="get" class="form_search"></form>
+					<input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
+					<input type="submit" value="Buscar" class="btn_search">
+				
 				
 				<div class="col-sm-12">
 				<div class="cnt-scroll">
-				<br>
-			
-			<div class="row table-responsive col-sm-12" style="text-align:center;">
-				<table class="table table-striped" style="border:1px solid black;background:lightgray;">
-					<thead >
-						<tr >
-							<th style="text-align:center;">ID</th>
-							<th style="text-align:center;">Nombre</th>
-							<th style="text-align:center;">Descripcion</th>
-							<th style="text-align:center;">Cantidad</th>
-							
-							<th style="text-align:center;">Precio</th>
-							<th style="text-align:center;">Editar</th>
-							<th style="text-align:center;">Eliminar</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-					
-						<?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
-								
-							<tr>
-								<td><?php echo $row['id_producto']; ?></td>
-								<td><?php echo $row['nombre']; ?></td>
-								<td><?php echo $row['descripcion']; ?></td>
-								<td><?php echo $row['cantidad']; ?></td>
-								<td>S/.<?php echo  $row['precio']; ?></td>
-								<td>
-			<span  data-toggle="modal" data-target="#abremodalUpdateArticulo" class="btn btn-warning btn-xs" onclick="agregaDatosArticulo('<?php echo $row['id_producto'] ?>')">
-				<span class="glyphicon glyphicon-pencil"></span>
-			</span>
-		</td>
-		<td>
-			<span class="btn btn-danger btn-xs" onclick="eliminaArticulo('<?php echo $row['id_producto'] ?>')">
-				<span class="glyphicon glyphicon-remove"></span>
-			</span>
-		</td>
-		
-							</tr>
-							
-						<?php } ?>
-					</tbody>
-					
-				</table>
-			</div>
-		</div>
+					<div id="tablaArticulosLoad"></div>
 				</div>
 		</div>
 			</div>

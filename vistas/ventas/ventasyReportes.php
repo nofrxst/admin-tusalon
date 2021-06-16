@@ -48,7 +48,7 @@
 					</td>
 					
 					<td>
-						<?php echo .$obj->obtenDatosArticulo($ver[3]) ?>
+						<?php echo $ver[3] ?>
 					</td>
 					<td>
 						<?php 
