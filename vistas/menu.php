@@ -38,6 +38,7 @@
               <li><a href="categorias.php">Categorias</a></li>
               <li><a href="articulos.php">Añadir Articulos</a></li>
               <li><a href="inventario.php">Inventario</a></li>
+              <!-- <li><a href="inv2.php">Inventario2</a></li> -->
             </ul>
           </li>
 

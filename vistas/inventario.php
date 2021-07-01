@@ -45,9 +45,9 @@ $resultado = $mysqli->query($sql);
 				<br>
 			
 			<div class="row table-responsive col-sm-12" style="text-align:center;">
-				<table class="table table-striped" style="border:1px solid black;background:lightgray;">
+				<table class="table " style="background:white;">
 					<thead >
-						<tr >
+						<tr class="encabezado">
 							<th style="text-align:center;">ID</th>
 							<th style="text-align:center;">Nombre</th>
 							<th style="text-align:center;">Descripcion</th>
@@ -70,11 +70,11 @@ $resultado = $mysqli->query($sql);
 								<td><?php echo $row['cantidad']; ?></td>
 								<td>S/.<?php echo  $row['precio']; ?></td>
 								<td>
-			<span  data-toggle="modal" data-target="#abremodalUpdateArticulo" class="btn btn-warning btn-xs" onclick="agregaDatosArticulo('<?php echo $row['id_producto'] ?>')">
+				<span  data-toggle="modal" data-target="#abremodalUpdateArticulo" class="btn btn-warning btn-xs" onclick="agregaDatosArticulo('<?php echo $row['id_producto'] ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
-			</span>
-		</td>
-		<td>
+				</span>
+				</td>
+				<td>
 			<span class="btn btn-danger btn-xs" onclick="eliminaArticulo('<?php echo $row['id_producto'] ?>')">
 				<span class="glyphicon glyphicon-remove"></span>
 			</span>

@@ -19,9 +19,9 @@
 <div class="table-responsive ">
 <caption><label style="padding-left: 40%; text-transform:uppercase;">Clientes Registrados</label></caption>
 	<div class="artibg2">
-	 <table class="table table-striped table-hover table-condensed table-bordered" style="text-align: center;">
+	 <table class="table  table-condensed " style="text-align: center;">
 	 	
-	 	<tr>
+	 	<tr class="encabezado">
 	 		<td>Nombre</td>
 	 		<td>Apellido</td>
 	 		<td>Direccion</td>

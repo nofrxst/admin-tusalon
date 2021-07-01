@@ -2269,11 +2269,10 @@ caption {
 th {
   text-align: left;
 }
+
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px;
-  
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -2284,7 +2283,7 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid rgba(121, 121, 121, 0.986);
 }
 .table > thead > tr > th {
   vertical-align: bottom;

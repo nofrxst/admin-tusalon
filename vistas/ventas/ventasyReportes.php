@@ -22,9 +22,9 @@
 	<div class="col-sm-10">
 		<div class="table-responsive">
 			<div class="artibg2">
-			<table class="table table-striped table-hover table-condensed table-bordered" style="text-align: center;">
-				<caption><label style="padding-left: 45%; ;text-transform:uppercase;font-size:20px;">Ventas</label></caption>
-				<tr>
+			<table class="table table-condensed table-bordered" style="text-align: center;">
+				
+				<tr class="encabezado">
 					<td>Folio</td>
 					<td>Fecha</td>
 					<td>Cliente</td>
@@ -61,8 +61,12 @@
 				</tr>
 		<?php endwhile; ?>
 			</table>
+							
 			</div>
+			
 		</div>
 	</div>
 	<div class="col-sm-1"></div>
 </div>
+
+

@@ -13,13 +13,18 @@ if(isset($_SESSION['usuario'])){
 		<?php require_once "../clases/Conexion.php"; 
 		$c= new conectar();
 		$conexion=$c->conexion();
-		if(isset($_POST['search'])){
-			$searchKey = $_POST['search'];
-			$sql = "SELECT * FROM articulos where nombre LIKE '%$searchKey%'";
-		}else
-		$sql = "SELECT * FROM articulos";
-		
-		$result=mysqli_query($conexion,$sql);
+		$where ="";
+
+if(!empty($_POST))
+{
+    $valor = $_POST['campo'];
+    if(!empty($valor)){
+        $where = "WHERE nombre LIKE  '%$valor'";
+    }
+}
+$sql = "SELECT articulos.nombre,articulos.categoria,articulos.descripcion,articulos.cantidad,articulos.precio,imagenes.ruta FROM articulos inner join imagenes on imagenes.id_imagen=articulos.id_imagen  $where";
+$resultado = $mysqli->query($sql);
+
 		?>
 	</head>
 	<body>
@@ -29,9 +34,10 @@ if(isset($_SESSION['usuario'])){
 			<div class="row">
 				
 				
-					<form action="buscar_producto.php" method="get" class="form_search"></form>
-					<input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
-					<input type="submit" value="Buscar" class="btn_search">
+			<form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
+            <b>Nombre: </b><input type="text" id="campo" name="campo"> 
+			 <input  style="Margin-left:20px;" type="submit" id="enviar" value="Buscar" class="btn btn-info" >
+            </form>
 				
 				
 				<div class="col-sm-12">

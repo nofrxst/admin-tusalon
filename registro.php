@@ -18,11 +18,13 @@
 <head>
 	<title>registro</title>
 	<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
 	<script src="librerias/jquery-3.2.1.min.js"></script>
 	<script src="js/funciones.js"></script>
 
 </head>
 <body style="background-color: gray">
+	<div class="bg-style">
 	<br><br><br>
 	<div class="container">
 		<div class="row">
@@ -50,6 +52,8 @@
 			<div class="col-sm-4"></div>
 		</div>
 	</div>
+	</div>
+	
 </body>
 </html>
 

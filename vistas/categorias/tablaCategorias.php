@@ -11,10 +11,10 @@
 	 ?>
 
 <div class="artibg2">
-<table class="table table-striped table-hover table-condensed table-bordered" style="text-align: center;">
+<table class="table t table-condensed table-bordered" style="text-align: center;">
 	
 	
-	<tr>
+	<tr class="encabezado">
 		<td>Categoria</td>
 		<td>Editar</td>
 		<td>Eliminar</td>

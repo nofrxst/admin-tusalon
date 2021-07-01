@@ -134,5 +134,6 @@ public function obtenerProducto($idventa){
 
 	return $texto;
 }
+
 }
 ?>
